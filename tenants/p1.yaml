@@ -1,0 +1,27 @@
+apiVersion: platform.adp.panasonic.io/v1alpha1
+kind: XTenantEnvironment
+metadata:
+  # TODO: becomes <projectCode>-<environment> once the environment is known
+  name: p1
+spec:
+  projectCode: p1
+  # TODO: source of the environment is not confirmed yet
+  environment: ""
+  subscriptionId: 24e81395-8854-4bb5-b6a6-38f338308bda
+  # TODO: confirm which components are listed (airflow is included, snowflake is excluded)
+  components:
+    - airflow
+    - ai-masking-agent
+  # TODO: confirm the role names used in the XR
+  users:
+    - email: user1@gmail.com
+      role: viewer
+  network:
+    # TODO: source of the address range is not confirmed yet
+    addressRange: ""
+  # TODO: source of the blob container list is not confirmed yet
+  blobContainers: []
+  githubCi:
+    - repository: a/b
+      # TODO: must equal spec.environment
+      environment: ""
